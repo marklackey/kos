@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+
+	<title>The Library at Kos</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+	<script src="assets/js/script.js"></script>
+
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet"> -->
+	<link href="assets/css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<header class="compact">
+		<div style="float:left;">
+			<h1><a href="#">The Library at Kos</a></h1></div>
+	</header>
+
+	<div class="main-content">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<!-- <form id="clearStorage">
+						<input type="submit" value="reset storage" />
+					</form> -->
+					<h1>Add/Update</h1>
+					<form id="addOrUpdateBookForm">
+						<input name="updateOrNew" id="bookFormHiddenField" type="hidden" value="new" />
+						<input name="id" id="bookFormIdField" type="hidden" value="">
+						<fieldset class="form-group text-left">
+							<label for="bookFormAuthor">Author</label>
+							<input class="form-control" name="author" id="bookFormAuthor" type="text" />
+						</fieldset>
+						<fieldset class="form-group text-left">
+							<label for="bookFormTitle">Title</label>
+							<input class="form-control" name="title" id="bookFormTitle" type="text" />
+						</fieldset>
+						<fieldset class="form-group text-left">
+							<label for="bookFormISBN">ISBN</label>
+							<input class="form-control" name="isbn" id="bookFormISBN" type="text" />
+						</fieldset>
+						<input class="form-control btn btn-primary" id="bookFormSubmitButton" type="submit" value="Add" />
+					</form>
+				</div>
+
+
+				<div id="bookListContainer" class="col-sm-9">
+					<h1>Book List</h1>
+					<table class="table">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Author</th>
+								<th>Title</th>
+								<th>ISBN</th>
+								<th></th>
+
+							</tr>
+						</thead>
+						<script id="example-template" type="text/x-handlebars-template">
+							<!-- people is looked up on the global context, the one we pass to the compiled template -->
+								{{#each books}}
+								<tr>
+									<!-- Here the context is each individual person. So we can access its properties directly: -->
+									<th scope="row">{{id}}</th>
+									<td class='text-left'>{{author}}</td>
+									<td class='text-left'>{{title}}</td>
+									<td class='text-left'>{{isbn}}</td>
+									<td>
+										<button type="button" class="btn btn-primary deleteBookButton" id="{{id}}">delete</button>
+										<button type="button" class="btn btn-primary updateBookButton" id="{{id}}" data-author="{{author}}" data-title="{{title}}" data-isbn="{{isbn}}">update</button>
+									</td>
+								</tr>
+								{{/each}}
+						</script>
+						<tbody id="listOfBooks">
+
+
+
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+		</div>
+
+</body>
+
+</html>

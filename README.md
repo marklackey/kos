@@ -17,3 +17,10 @@ So, I had aspirations for more features like lining to Google Books, adding imag
 * Tried to modularize the javascript as much as possible
 * Heavy use of the jquery DOM access abilities, minimal use of the Handlebars templating--could be powerful
 * Uploaded to a sub-domain on my server: kos.marklackey.org
+* 
+### Enhancments
+* Validation -- easy to add with a library like http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js
+* Error handling--shouldn't be too much, but always good to have
+* More fields for each book, like notes, images, urls, etc.
+* Make better use of git to track changes
+
